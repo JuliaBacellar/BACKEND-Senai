@@ -1,0 +1,63 @@
+faça uma pesquisa sobre herança e polimorfismo
+
+herança -> permite que uma subclasse utilize dos atributos 
+de uma classe ja existente,isso ocorre para ter um código 
+mais legivel,cleancode e tambem evitar repetições 
+
+ex:
+
+class Animal:
+    def__init__(self,nome):
+        self.nome = nome
+
+    def fazer_som(self):
+        return "som de cocórico"
+
+#agora essa subclasse vai herdar da classe Animal
+    def Cachorro(animal):
+        def fazer_som(self):
+        return "faz auau!"
+
+
+jorge = Cachorro("jorge")
+
+print(jorge.fazer_som())
+
+
+
+polimorfismo
+
+tratar todas as classes de uma mesma forma,evitando novamente 
+a repetição de código e também utilizando do fato de todos 
+terem o mesmo comportamento,para não ter que ficar escrevendo varias vezes o mesmo
+método de comportamento em cada um.A mesma função (processar_pagamento) funciona com diferentes tipos
+de objetos e chama o método certo para cada um 
+ex:
+
+class MetodoPagamento:
+    def pagar(self,valor):
+        raise NotImplementedError("implemente na subclasse")
+
+class CartaoCredito(MetodoPagamento):
+    def pagar(self,valor):
+        print(f"pagamento de {valor:.2f} realizado com cartao de crédito)
+
+class Boleto(MetodoPagamento):
+    def pagar(self,valor):
+        print(f"boleto gerado no valor{valor:.2f}")
+
+class Pix(MetodoPagamento):
+    def pagar(self,valor):
+        print(f"pagamento de {valor} realizado via pix)
+
+def processar_pagamento(metodo: MetodoPagamento)
+##chamando o método pagar pois ele que muda de acordo com o caso
+    metodo.pagar(valor)
+
+cartao = CartaoCredito()
+boleto = Boleto()
+pix = Pix()
+
+processar_pagamento(cartao,100)
+processar_pagamento(boleto,200)
+processar_pagamento(pix,50)
