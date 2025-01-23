@@ -1,0 +1,14 @@
+Pesquise sobre complexidade de algoritmos e calcule a
+complexidade dos algoritmos anteriores
+
+
+A busca binaria parece ser a mais eficiente que a busca linear porque a linear 
+ve todos os elementos da lisat até encontrar o corresponde,é melhor só para ser usado 
+em lista pequena,porém o binpária é melhor porque ele divide a lista ao meio a cada 
+comparação e nos algoritmos de ordenação o merge sort é mais eficiente  do que o bubble 
+e o insertions ,porque enquanto o bubble compara e troca os valores repetidas vezes e o
+insertio insere valor de vez em vez na posição "correta" o merge divide a lista
+em partes e ordena e depois junta é mais controlado e eficiente.
+Para mim o nivel maior de complexidade foi o merge sort,foi mais complicado entender
+porém depois de algumas pesquisas vi que o algoritmo que tem maior complexidade 
+foi o Bubble sort e o Insertion.
