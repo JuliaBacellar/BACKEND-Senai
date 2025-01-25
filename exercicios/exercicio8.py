@@ -20,6 +20,18 @@ class Carro:
             self.velocidade_atual += valor
             print(f"acelerando,velocidade atual:{self.velocidade_atual}km/h")
 
+    def frear_carro(self, valor=10):
+        if self.velocidade_atual - valor < 0:
+            self.velocidade_atual = 0
+            print("O carro parou completamente.")
+        else:
+            self.velocidade_atual -= valor
+            print(f"Freando... Velocidade atual: {self.velocidade_atual} km/h")
 
+    def exibir_velocidade(self):
+        print(f"A velocidade atual é: {self.velocidade_atual} km/h")
         
-         
+carro1 = Carro("civic", "naosei", 50)
+carro1.acelerar_carro(40)
+carro1.frear_carro(30)
+carro1.exibir_velocidade()         
