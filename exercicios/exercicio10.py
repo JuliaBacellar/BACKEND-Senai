@@ -1,3 +1,6 @@
+##Implemente uma classe chamada “Livro” com atributos para armazenar o título, 
+# o autor e o número de páginas do livro. 
+# Adicione métodos para emprestar o livro, devolvê-lo e verificar se está disponível
 class Livro:
     def __init__(self, titulo, autor, numero_paginas):
         self.titulo = titulo
@@ -6,6 +9,7 @@ class Livro:
         self.disponivel = True
 
     def emprestar(self):
+        ##como ja estava disponivel e foi emprestado agora ele esta false 
         if self.disponivel:
             self.disponivel = False
             return f"O livro '{self.titulo}' foi emprestado com sucesso."
