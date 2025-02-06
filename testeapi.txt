@@ -1,0 +1,6 @@
+Opinião sobre Postman e Insomnia
+
+Eu não acho que tenha uma preferencia,as duas tem pontos bons,o Insomnia tem a interface mais amigavel e simples,acredito
+que seja para testes rapidos e na hora logo o Postman parece ser mais completo,porém com a interface mais cheia,
+mas acredito que sirva para tarefas mais extensas,ele tem funcionalidades como deixar rodando os testes de api a cada
+segundos para ver se a api não "caiu",e também fornece uma rápida documentação das APIS,isso poupa muito tempo de trabalho.
