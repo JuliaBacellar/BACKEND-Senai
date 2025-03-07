@@ -1,0 +1,36 @@
+O que são : padrão de arquitetura para cliar uma aplicação back
+
+
+MTV -  
+
+M-model é responsável por estruturar meu banco de dados e voce estrutura esses dados de forma,para voce armazenar informações no banco 
+e ele também mostra o que sera guardado e como sera guardado
+
+T-template é o que define aparencia do site ou sistema ele é basicamente um arquivo html com cokm código dinamico  quem mostra os dados do
+model é o template
+ 
+V-view é o crerebro da aplicação ela pega informações do model e manda para o template e exibe os dados
+
+
+M(model)- guarda informações no banco
+V(view)- exibe os dados que o C passou para ele
+C(controller)- recebe as requisições que a pessoa que esta mexendo no sistema faz tipo ela pede algo e ele busca os dados e decide oque fazer
+de acordo com o que ele pedir 
+
+
+Relação/Diferença:o django ele usa o mtv que parece com o mvc,o django só nao segue o mvc porque nele ja tem o controller de forma 
+automatica.
+
+no mvc   no mtv
+m      e   m     = gerencia dados
+
+v      e   t  = exibe os dados
+
+c      e    v  = processa as req e envia 
+
+
+
+o controller do mvc é substituido pelo views no django
+o template é o view no django
+
+
