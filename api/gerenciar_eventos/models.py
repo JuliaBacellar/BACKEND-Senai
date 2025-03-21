@@ -5,5 +5,5 @@ class Evento(models.Model):
     descricao = models.TextField()
     data_hora = models.DateTimeField()
     local = models.TextField(blank=True, null=True)
-    Categoria = models.CharField(max_length=50, blank=True, null=True)
+    categoria = models.CharField(max_length=50, blank=True, null=True)
 

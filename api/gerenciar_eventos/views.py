@@ -6,8 +6,6 @@ from .models import Evento
 from .serializers import EventoSerializer
 
 class EventoListCreateView(APIView):
-    """ Lista todos os eventos e permite criar um novo evento """
-
     def get(self, request):
         eventos = Evento.objects.all()
         serializer = EventoSerializer(eventos, many=True)
@@ -22,8 +20,6 @@ class EventoListCreateView(APIView):
 
 
 class EventoDetailView(APIView):
-    """ Recupera, atualiza ou deleta um evento específico """
-
     def get_object(self, id):
         try:
             return Evento.objects.get(id=id)
@@ -54,11 +50,29 @@ class EventoDetailView(APIView):
         evento.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
 class EventosProximosView(APIView):
-    """ Retorna eventos que ainda vão acontecer """
 
     def get(self, request):
-        eventos = Evento.objects.filter(data_hora__gte=now())
+        data_atual = now()
+        data_limite = data_atual + timedelta(days=7) 
+        eventos = Evento.objects.filter(data_hora__gte=data_atual, data_hora__lte=data_limite)
         serializer = EventoSerializer(eventos, many=True)
         return Response(serializer.data)
+
+class EventoDetalhesView(APIView):
+   
+    def get(self, request, id):
+        try:
+            evento = Evento.objects.get(id=id)
+        except Evento.DoesNotExist:
+            return Response({"erro": "Evento não encontrado"}, status=status.HTTP_404_NOT_FOUND)
+        
+        detalhes = {
+            "nome": evento.nome,
+            "descricao": evento.descricao,
+            "data": evento.data_hora,
+            "local": evento.local,
+            "categoria": evento.categoria,
+        }
+        return Response(detalhes, status=status.HTTP_200_OK)
+    
